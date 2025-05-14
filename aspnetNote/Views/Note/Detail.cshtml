@@ -11,7 +11,9 @@
 			<label>제목 : </label>	@Model.NoteTitle
 			</div>
 			<div class="card-body">
-				<p class="card-text">@Model.NoteContents</p>
+				<p class="card-text">
+					@Html.Raw(Model.NoteContents) 
+					</p>
 			</div>
 			<div class="card-footer text-end">
 				<a class="btn btn-primary" asp-controller="Note" asp-action="Index">목록</a>
