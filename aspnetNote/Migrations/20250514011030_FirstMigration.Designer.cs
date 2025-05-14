@@ -11,7 +11,7 @@ using aspnetNote.DataContext;
 namespace aspnetNote.Migrations
 {
     [DbContext(typeof(AspnetNoteDbContext))]
-    [Migration("20250512071701_FirstMigration")]
+    [Migration("20250514011030_FirstMigration")]
     partial class FirstMigration
     {
         /// <inheritdoc />
@@ -26,11 +26,11 @@ namespace aspnetNote.Migrations
 
             modelBuilder.Entity("aspnetNote.Models.Note", b =>
                 {
-                    b.Property<int>("NnoteNo")
+                    b.Property<int>("NoteNo")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NnoteNo"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NoteNo"));
 
                     b.Property<string>("NoteContents")
                         .IsRequired()
@@ -43,7 +43,7 @@ namespace aspnetNote.Migrations
                     b.Property<int>("UserNo")
                         .HasColumnType("int");
 
-                    b.HasKey("NnoteNo");
+                    b.HasKey("NoteNo");
 
                     b.HasIndex("UserNo");
 
@@ -76,13 +76,13 @@ namespace aspnetNote.Migrations
 
             modelBuilder.Entity("aspnetNote.Models.Note", b =>
                 {
-                    b.HasOne("aspnetNote.Models.User", "user")
+                    b.HasOne("aspnetNote.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserNo")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("user");
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

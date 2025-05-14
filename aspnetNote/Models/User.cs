@@ -14,13 +14,13 @@ namespace aspnetNote.Models
         /// 사용자 이름      
         /// </summary>
         [Required(ErrorMessage ="사용자 이름을 입력하세요.")] // not null 설정
-        public String  UserName { get; set; }
+        public required string  UserName { get; set; }
 
-        [Required(ErrorMessage = "사용자 ID을 입력하세요.")] // not null 설정
-        public String UserId { get; set; }
+        [Required(ErrorMessage = "사용자 이름을 입력하세요.")]
+        public required string UserId { get; set; }
 
         [Required(ErrorMessage = "사용자 비밀번호을 입력하세요.")] // not null 설정
-        public String UserPassword { get; set; }
+        public required string UserPassword { get; set; }
 
     }
 }

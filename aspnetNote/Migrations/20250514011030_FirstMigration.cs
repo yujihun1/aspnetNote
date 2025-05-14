@@ -17,7 +17,7 @@ namespace aspnetNote.Migrations
                     UserNo = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserPassword = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
@@ -29,7 +29,7 @@ namespace aspnetNote.Migrations
                 name: "Notes",
                 columns: table => new
                 {
-                    NnoteNo = table.Column<int>(type: "int", nullable: false)
+                    NoteNo = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NoteTitle = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NoteContents = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -37,7 +37,7 @@ namespace aspnetNote.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Notes", x => x.NnoteNo);
+                    table.PrimaryKey("PK_Notes", x => x.NoteNo);
                     table.ForeignKey(
                         name: "FK_Notes_Users_UserNo",
                         column: x => x.UserNo,
