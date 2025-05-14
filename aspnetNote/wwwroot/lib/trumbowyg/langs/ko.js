@@ -36,6 +36,7 @@ jQuery.trumbowyg.langs.ko = {
     unorderedList: '기호 목록',
     orderedList: '번호 목록',
 
+    
     insertImage: '이미지 넣기',
     insertVideo: '비디오 넣기',
     link: '링크',
